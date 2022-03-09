@@ -3,6 +3,7 @@ import 'package:nft_ui/ui/about/about.dart';
 import 'package:nft_ui/ui/auth/register.dart';
 import 'package:nft_ui/ui/home/home.dart';
 import 'package:nft_ui/ui/menu/menu.dart';
+import 'package:nft_ui/ui/sold_page/sold_page.dart';
 
 class AppRoutes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -23,6 +24,10 @@ class AppRoutes {
 
       case HomeScreen.route:
         widget = HomeScreen();
+        break;
+
+      case SoldPage.route:
+        widget = SoldPage();
         break;
     }
     return MaterialPageRoute(

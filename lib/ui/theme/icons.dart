@@ -15,6 +15,10 @@ class AppIcons {
   static Widget logo2 = Image.asset('assets/png/logo2.png');
   static Widget hot = Image.asset('assets/png/hot.png');
   static Widget collection = Image.asset('assets/png/collection.png');
+  static Widget star = Image.asset('assets/png/star.png');
+  static Widget metadeta = Image.asset('assets/png/metadeta.png');
+  static Widget etherscan = Image.asset('assets/png/etherscan.png');
+  static Widget openLink = Image.asset('assets/png/open_link.png');
 
   static Widget work1 = Image.asset('assets/png/work1.png');
   static Widget work2 = Image.asset('assets/png/work2.png');

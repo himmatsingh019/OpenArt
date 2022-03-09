@@ -25,7 +25,7 @@ class AboutScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomAppbar(),
+                  CustomAppbar(showBack: false, showSearch: false),
                   SizedBox(height: SizeHelper.hBlock * 20),
                   Center(
                     child: Column(

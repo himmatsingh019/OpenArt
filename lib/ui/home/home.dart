@@ -27,7 +27,10 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: Column(
                 children: [
-                  CustomAppbar(),
+                  CustomAppbar(
+                    showBack: false,
+                    showSearch: true,
+                  ),
                   SizedBox(height: 30),
                   Center(
                     child: Text(
