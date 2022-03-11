@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:nft_ui/ui/sold_page/widgets/sold_card.dart';
-import 'package:nft_ui/ui/theme/colors.dart';
 import 'package:nft_ui/ui/theme/icons.dart';
 import 'package:nft_ui/ui/widgets/custom_appbar.dart';
 import 'package:nft_ui/ui/widgets/custom_button.dart';
 import 'package:nft_ui/ui/widgets/custom_footer.dart';
 import 'package:nft_ui/ui/widgets/custom_outline_button.dart';
 
-class SoldPage extends StatelessWidget {
-  SoldPage({Key? key, this.image}) : super(key: key);
-  static const String route = '/sold';
+class PlaceBid extends StatelessWidget {
+  const PlaceBid({Key? key}) : super(key: key);
 
-  final String? image;
+  static const String route = '/placeBid';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       body: ListView(
         children: [
           Padding(
@@ -24,17 +21,14 @@ class SoldPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomAppbar(
-                  showBack: true,
-                  showSearch: false,
-                ),
+                CustomAppbar(showBack: true, showSearch: false),
                 SizedBox(height: 40),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    child: Image.network(
-                      image ?? '',
+                    child: Image.asset(
+                      'assets/images/image4.jpg',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -210,109 +204,60 @@ class SoldPage extends StatelessWidget {
                 ),
                 SizedBox(height: 30),
                 Container(
-                  height: 120,
                   width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
                   decoration: BoxDecoration(
-                    color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
+                    color: Colors.white,
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: 'Sold For ',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 22,
-                              ),
-                            ),
-                            TextSpan(
-                              text: '2.50 ETH',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 26,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+                      Text(
+                        'Reserve price',
+                        style: TextStyle(
+                          fontSize: 22,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            'Owned by',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 22,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(left: 10),
-                                height: 34,
-                                width: 34,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      AppColors.indigoColor,
-                                      AppColors.purpleColor,
-                                    ],
-                                  ),
-                                ),
-                                child: Text(
-                                  'D',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(width: 10),
-                              Text(
-                                '@david',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
+                      SizedBox(height: 6),
+                      Text(
+                        '1.50 ETH',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      SizedBox(height: 10),
+                      Text(
+                        'Once a bid has been placed and the reserve price has been met, a 24 hour auction for this artwork will begin.',
+                        style: TextStyle(color: Colors.grey, fontSize: 18),
+                      ),
+                      SizedBox(height: 30),
+                      CustomButton(title: 'Place a bid', isBid: true, route: ''),
+                      SizedBox(height: 30),
+                      Text(
+                        'Activity',
+                        style: TextStyle(
+                          fontSize: 24,
+                        ),
+                      ),
+                      SizedBox(height: 18),
+                      SoldCard(bidBy: 'Boni', price: '3.1'),
+                      SizedBox(height: 18),
+                      SoldCard(bidBy: 'Krish', price: '2.2'),
+                      SizedBox(height: 50),
+                      Center(child: AppIcons.logo2),
+                      SizedBox(height: 10),
+                      Center(child: AppIcons.creative),
+                      SizedBox(height: 20),
+                      CustomButton(title: 'Earn Now', route: ''),
+                      SizedBox(height: 20),
+                      CustomOutlineButton(title: 'Discover More'),
+                      SizedBox(height: 70),
                     ],
                   ),
                 ),
-                SizedBox(height: 18),
-                Text(
-                  'Activity',
-                  style: TextStyle(
-                    fontSize: 24,
-                  ),
-                ),
-                SizedBox(height: 18),
-                SoldCard(isSold: true, price: '3.1'),
-                SizedBox(height: 18),
-                SoldCard(bidBy: 'Krish', price: '2.2'),
-                SizedBox(height: 18),
-                SoldCard(bidBy: 'Boni', price: '1.11'),
-                SizedBox(height: 50),
-                Center(child: AppIcons.logo2),
-                SizedBox(height: 10),
-                Center(child: AppIcons.creative),
-                SizedBox(height: 20),
-                CustomButton(title: 'Earn Now', route: ''),
-                SizedBox(height: 20),
-                CustomOutlineButton(title: 'Discover More'),
-                SizedBox(height: 70),
               ],
             ),
           ),

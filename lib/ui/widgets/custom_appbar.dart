@@ -18,21 +18,25 @@ class CustomAppbar extends StatelessWidget {
       children: [
         if (showBack)
           GestureDetector(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Icon(Icons.arrow_back_ios)),
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+            ),
+          ),
         if (showBack) Spacer(),
         AppIcons.logo,
         Spacer(),
         if (showSearch) AppIcons.searchButton,
         SizedBox(width: SizeHelper.wBlock * 20),
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).pushNamed(MenuScreen.route);
-          },
-          child: AppIcons.menuButton,
-        ),
+        if (showSearch)
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(MenuScreen.route);
+            },
+            child: AppIcons.menuButton,
+          ),
       ],
     );
   }

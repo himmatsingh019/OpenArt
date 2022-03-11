@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class AppIcons {
-  // static Widget
   //SVGs
   static Widget closeButton = SvgPicture.asset('assets/svg/close.svg');
   static Widget searchButton = SvgPicture.asset('assets/svg/search.svg');
@@ -11,6 +10,8 @@ class AppIcons {
 
   //PNGs
   static Widget processor = Image.asset('assets/png/processor.png');
+  static Widget connectWallet = Image.asset('assets/png/connect.png');
+
   static Widget logo = Image.asset('assets/png/logo.png');
   static Widget logo2 = Image.asset('assets/png/logo2.png');
   static Widget hot = Image.asset('assets/png/hot.png');

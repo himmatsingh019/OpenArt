@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nft_ui/ui/theme/colors.dart';
 import 'package:nft_ui/ui/theme/icons.dart';
 import 'package:nft_ui/ui/widgets/custom_appbar.dart';
-import 'package:nft_ui/ui/widgets/custom_buttom.dart';
+import 'package:nft_ui/ui/widgets/custom_button.dart';
 import 'package:nft_ui/ui/widgets/custom_footer.dart';
 import 'package:nft_ui/ui/widgets/custom_outline_button.dart';
 import 'package:nft_ui/ui/widgets/text_styles.dart';
@@ -25,7 +25,7 @@ class AboutScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomAppbar(showBack: false, showSearch: false),
+                  CustomAppbar(showBack: true, showSearch: false),
                   SizedBox(height: SizeHelper.hBlock * 20),
                   Center(
                     child: Column(
@@ -142,7 +142,7 @@ class AboutScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  CustomButton(title: 'Earn Now'),
+                  CustomButton(title: 'Earn Now', route: ''),
                   SizedBox(height: 10),
                   CustomOutlineButton(title: 'Discover more'),
                   SizedBox(height: 40),

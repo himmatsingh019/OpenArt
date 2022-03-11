@@ -5,7 +5,14 @@ import 'package:nft_ui/ui/theme/icons.dart';
 class SoldCard extends StatelessWidget {
   const SoldCard({
     Key? key,
+    this.isSold = false,
+    this.bidBy,
+    required this.price,
   }) : super(key: key);
+
+  final bool isSold;
+  final String? bidBy;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +29,8 @@ class SoldCard extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.only(left: 10),
-            height: 50,
-            width: 50,
+            height: 46,
+            width: 46,
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
@@ -47,29 +54,47 @@ class SoldCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Auction won by David',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
+              if (isSold)
+                Text(
+                  'Auction won by David',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
+              if (!isSold)
+                Text(
+                  'Bid place by @$bidBy',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               SizedBox(height: 4),
               Text(
                 'June 04, 2021 at 12:00am',
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 16,
                   color: Colors.grey,
                 ),
               ),
               Spacer(),
-              Text(
-                'Sold for 1.50 ETH',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
+              if (isSold)
+                Text(
+                  'Sold for $price ETH',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
+              if (!isSold)
+                Text(
+                  '$price ETH',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
             ],
           ),
           AppIcons.openLink,

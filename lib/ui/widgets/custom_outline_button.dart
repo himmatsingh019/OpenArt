@@ -5,14 +5,16 @@ class CustomOutlineButton extends StatelessWidget {
   const CustomOutlineButton({
     Key? key,
     required this.title,
+    this.isBid = false,
   }) : super(key: key);
 
   final String title;
+  final bool isBid;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 66,
+      height: isBid ? 56 : 66,
       alignment: Alignment.center,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(

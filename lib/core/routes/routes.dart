@@ -3,6 +3,7 @@ import 'package:nft_ui/ui/about/about.dart';
 import 'package:nft_ui/ui/auth/register.dart';
 import 'package:nft_ui/ui/home/home.dart';
 import 'package:nft_ui/ui/menu/menu.dart';
+import 'package:nft_ui/ui/place_bid/place_bid.dart';
 import 'package:nft_ui/ui/sold_page/sold_page.dart';
 
 class AppRoutes {
@@ -28,6 +29,10 @@ class AppRoutes {
 
       case SoldPage.route:
         widget = SoldPage();
+        break;
+
+      case PlaceBid.route:
+        widget = PlaceBid();
         break;
     }
     return MaterialPageRoute(

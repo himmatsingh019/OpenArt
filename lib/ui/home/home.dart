@@ -1,10 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:nft_ui/providers/photo_provider.dart';
+import 'package:nft_ui/ui/place_bid/place_bid.dart';
 import 'package:nft_ui/ui/theme/colors.dart';
 import 'package:nft_ui/ui/theme/icons.dart';
 import 'package:nft_ui/ui/widgets/custom_appbar.dart';
-import 'package:nft_ui/ui/widgets/custom_buttom.dart';
+import 'package:nft_ui/ui/widgets/custom_button.dart';
 import 'package:nft_ui/ui/widgets/custom_footer.dart';
 import 'package:nft_ui/ui/widgets/custom_outline_button.dart';
 import 'package:nft_ui/ui/widgets/item_card.dart';
@@ -168,7 +169,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  CustomButton(title: 'Place a bid'),
+                  CustomButton(title: 'Place a bid', route: PlaceBid.route),
                   SizedBox(height: 16),
                   CustomOutlineButton(title: 'View artwork'),
                   SizedBox(height: 36),
@@ -435,7 +436,7 @@ class HomeScreen extends StatelessWidget {
                   AppIcons.logo2,
                   AppIcons.creative,
                   SizedBox(height: 20),
-                  CustomButton(title: 'Earn Now'),
+                  CustomButton(title: 'Earn Now', route: ''),
                   SizedBox(height: 20),
                   CustomOutlineButton(title: 'Discover More'),
                   SizedBox(height: 70),

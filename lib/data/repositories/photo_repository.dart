@@ -15,6 +15,7 @@ class PhotoRepository {
       );
       return (response.data as List).map((e) => PhotoModel.fromMap(e)).toList();
     } on DioError catch (e) {
+      print(e);
       return null;
     }
   }
