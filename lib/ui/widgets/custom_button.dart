@@ -174,7 +174,7 @@ class CustomButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 content: Container(
-                  height: 340,
+                  height: 360,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
                     children: [
@@ -205,7 +205,14 @@ class CustomButton extends StatelessWidget {
                         style: TextStyle(color: Colors.grey, fontSize: 18),
                       ),
                       SizedBox(height: 20),
-                      CustomButton(title: 'Connect Wallet', route: '', isBid: true)
+                      CustomButton(title: 'Connect Wallet', route: '', isBid: true),
+                      SizedBox(height: 10),
+                      Center(
+                        child: Text(
+                          'Learn more about wallets',
+                          style: TextStyle(color: Colors.grey, fontSize: 18),
+                        ),
+                      ),
                     ],
                   ),
                 ),
